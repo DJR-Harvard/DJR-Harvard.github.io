@@ -7,7 +7,28 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-
+<!-- Include jsPDF CDN -->
+      <script>
+         function generatePDF() {
+           // create a new jsPDF instance
+           const doc = new jsPDF();
+         
+           // remove all images and videos from the page
+           const images = document.querySelectorAll('img');
+           const videos = document.querySelectorAll('video');
+           images.forEach(img => img.remove());
+           videos.forEach(video => video.remove());
+         
+           // get the HTML content of the page
+           const html = document.body.innerHTML;
+         
+           // generate the PDF file from the HTML content
+           doc.fromHTML(html, 10, 10);
+         
+           // download the PDF file
+           doc.save('MyGithubAndAWSEC2Tutorial.pdf');
+         }
+      </script>
 
    </head>
    <body>
@@ -93,27 +114,6 @@
          </div>
       </div>
 
-      <!-- Include jsPDF CDN -->
-      <script>
-         function generatePDF() {
-           // create a new jsPDF instance
-           const doc = new jsPDF();
-         
-           // remove all images and videos from the page
-           const images = document.querySelectorAll('img');
-           const videos = document.querySelectorAll('video');
-           images.forEach(img => img.remove());
-           videos.forEach(video => video.remove());
-         
-           // get the HTML content of the page
-           const html = document.body.innerHTML;
-         
-           // generate the PDF file from the HTML content
-           doc.fromHTML(html, 10, 10);
-         
-           // download the PDF file
-           doc.save('MyGithubAndAWSEC2Tutorial.pdf');
-         }
-      </script>
+      
    </body>
 </html>
