@@ -23,7 +23,10 @@
 
            // get the HTML content of the page
            const html = document.body.innerHTML;
+           doc.text(html);
+            doc.save('tutorial.pdf');
 
+            /*
            // generate the PDF file from the HTML content
            doc.html(html, {
              callback: function (doc) {
@@ -31,6 +34,7 @@
                doc.save('MyGithubAndAWSEC2 Tutorial.pdf');
              }
            });
+           */
          }
       </script>
 
