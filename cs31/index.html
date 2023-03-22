@@ -9,6 +9,8 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <!-- Include jsPDF CDN -->
       <script>
+         window.jsPDF = window.jspdf.jsPDF;
+         
          function generatePDF() {
             var doc = new jsPDF();
             doc.text(20, 20, 'Hello world!');
