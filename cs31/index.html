@@ -10,6 +10,12 @@
 <!-- Include jsPDF CDN -->
       <script>
          function generatePDF() {
+            var doc = new jsPDF()
+
+            doc.text('Hello world!', 10, 10)
+            doc.save('a4.pdf')
+            
+            /*
            // create a new jsPDF instance
            const doc = new jsPDF();
          
@@ -27,6 +33,7 @@
          
            // download the PDF file
            doc.save('MyGithubAndAWSEC2Tutorial.pdf');
+           */
          }
       </script>
 
