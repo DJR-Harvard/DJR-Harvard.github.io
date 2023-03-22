@@ -12,24 +12,25 @@
          window.jsPDF = window.jspdf.jsPDF;
          
          function generatePDF() {
-            var doc = new jsPDF();
            // create a new jsPDF instance
-           //const doc = new jsPDF();
-         
+           const doc = new jsPDF();
+
            // remove all images and videos from the page
            const images = document.querySelectorAll('img');
            const videos = document.querySelectorAll('video');
            images.forEach(img => img.remove());
            videos.forEach(video => video.remove());
-         
+
            // get the HTML content of the page
            const html = document.body.innerHTML;
-         
+
            // generate the PDF file from the HTML content
-           doc.fromHTML(html, 10, 10);
-         
-           // download the PDF file
-           doc.save('MyGithubAndAWSEC2Tutorial.pdf');
+           doc.html(html, {
+             callback: function (doc) {
+               // download the PDF file
+               doc.save('MyGithubAndAWSEC2 Tutorial.pdf');
+             }
+           });
          }
       </script>
 
