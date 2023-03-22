@@ -51,7 +51,9 @@
                </ol>
             </div>
             <div class="col-md-6">
-               <h2>Create Local Project</h2>
+               <h2>Create Local
+                  Project
+               </h2>
                <img src="placeholder.jpg" alt="Placeholder Image" class="img-fluid mb-3">
                <video src="placeholder.mp4" controls class="mb-3"></video>
                <p class="lead">Summary: In this section, we will create a new project on our local machine.</p>
@@ -79,8 +81,37 @@
                </ol>
             </div>
          </div>
+         <div class="row">
+            <div class="col-md-6 offset-md-3">
+               <button onclick="generatePDF()" class="btn btn-primary btn-lg">Download PDF</button>
+            </div>
+         </div>
       </div>
       <!-- Include Bootstrap JS CDN -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-5r5z6SX5ShmHl1lUfWE6BTuy2KoO16bFZ0RoWNR9O6UUMVScxDpD6jJapVXn1xuN7VlIFj2uU5Z5/iyZ5U7VpA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <!-- Include jsPDF CDN -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js" integrity="sha512-jJD5I5E5pi7V2LgQwJ7NU3AUB3aE7VsooB/GZgX9mqvxAGvBl8Bn+VRUNEGy03/k1hRvyyJ8WkMCOktzjZ+/lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script>
+         function generatePDF() {
+           // create a new jsPDF instance
+           const doc = new jsPDF();
+         
+           // remove all images and videos from the page
+           const images = document.querySelectorAll('img');
+           const videos = document.querySelectorAll('video');
+           images.forEach(img => img.remove());
+           videos.forEach(video => video.remove());
+         
+           // get the HTML content of the page
+           const html = document.body.innerHTML;
+         
+           // generate the PDF file from the HTML content
+           doc.fromHTML(html, 10, 10);
+         
+           // download the PDF file
+           doc.save('MyGithubAndAWSEC2
+         Tutorial.pdf');
+         }
+      </script>
    </body>
 </html>
