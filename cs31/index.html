@@ -118,12 +118,21 @@
          <div class="row">
             <div class="col-md-6">
                <h2>AWS EC2 Environment Setup</h2>
-               <img src="placeholder.jpg" alt="Placeholder Image" class="img-fluid mb-3">
+               <img src="AWSSecurityGroup.jpg" alt="Placeholder Image" class="img-fluid mb-3" width="250px">
                <video src="placeholder.mp4" controls class="mb-3"></video>
                <p class="lead">Summary: In this section, we will set up our AWS EC2 environment for web development.</p>
                <ol>
-                  <li>Create an AWS account.</li>
-                  <li>Launch an EC2 instance.</li>
+                  <li>Create an AWS account.
+                     Sign up for an AWS account at <a href="https://portal.aws.amazon.com/billing/signup#/start/email">aws.amazon.com</a>. You will need a credit card.
+                  </li>
+                  <li>Launch an EC2 instance.
+                     Within the console, search for 'EC2' or navigate to the EC2 page here: <a href="https://us-east-1.console.aws.amazon.com/ec2/home">EC2<a/>. You must name your instance and click "Create new Key Pair".
+                     Accept all other default values and then click "Launch Instance". We won't be using the key pair or get into the various EC2 settings for this tutorial.
+                  </li>
+                  <li>
+                     In a production setting we would set up billing notifications and configure our security group such that we can manage costs and prevent unauthorized access to our EC2 instance. This is out of scope for this tutorial, so we will modify the default security group to accept inbound connections from anywhere for demonstration purposes.
+                     
+                  </li>
                   <li>Connect to the EC2 instance via SSH.</li>
                   <li>Install Node.js and Git on the EC2 instance.</li>
                   <li>Set up your SSH key on the EC2 instance.</li>
