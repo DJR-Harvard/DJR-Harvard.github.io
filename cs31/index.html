@@ -65,11 +65,31 @@
                <video src="placeholder.mp4" controls class="mb-3"></video>
                <p class="lead">Summary: In this section, we will set up our local environment for web development.</p>
                <ol>
-                  <li>Install a text editor, such as Visual Studio Code.</li>
-                  <li>Install Node.js.</li>
-                  <li>Install Git.</li>
-                  <li>Set up your Git profile.</li>
-                  <li>Set up your SSH key.</li>
+                  <li>
+                     Open your terminal and create a new directory for your project. Change into the new directory.<br/>
+                     <code>mkdir nodeProject<br/>cd nodeProject</code>
+                  </li>
+                  <li>
+                     If you haven't installed node already, do so now. Download here <a href="https://nodejs.org/en">https://nodejs.org/en</a>
+                  </li>
+                  <li>
+                     Make sure you gave git installed locally. On a mac, open your terminal and use the following command:<br/>
+                     <code>brew install git</code>
+                  </li>
+                  <li>
+                     If this is your first time using git, you will need to configure your username and email with the following commands:<br/>
+                     <code>
+                        git config --global user.name "Your Name"<br/>
+                        git config --global user.email "your_email@example.com"
+                     </code>
+                  </li>
+                  <li>Generate SSH keys locally and copy your public key to GitHub so you can push and commit your changes to github.<br/>
+                     <code>
+                        ssh-keygen -t rsa -b 4096 -C "your_email@example.com"<br/>
+                        cat ~/.ssh/id_rsa.pub
+                     </code><br/>
+                     Your public key is now displayed in your terminal. Copy it so it can be pasted into github.
+                  </li>
                </ol>
             </div>
          </div>
