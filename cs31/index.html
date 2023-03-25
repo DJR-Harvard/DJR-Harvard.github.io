@@ -61,7 +61,7 @@
             </div>
             <div class="col-md-6">
                <h2>Local Environment Setup</h2>
-               <img src="placeholder.jpg" alt="Placeholder Image" class="img-fluid mb-3">
+               <img src="GithubSSH.jpg" alt="Placeholder Image" class="img-fluid mb-3">
                <video src="placeholder.mp4" controls class="mb-3"></video>
                <p class="lead">Summary: In this section, we will set up our local environment for web development.</p>
                <ol>
@@ -89,6 +89,28 @@
                         cat ~/.ssh/id_rsa.pub
                      </code><br/>
                      Your public key is now displayed in your terminal. Copy it so it can be pasted into github.
+                  </li>
+                  <li>
+                     Navigate to <a href="https://github.com/settings/ssh/new">https://github.com/settings/ssh/new</a>. Give your key a title and paste the key in the form as shown in the screenshot.
+                  </li>
+                  <li>
+                     Validate your SSH key is set up correctly. From your terminal run the following command:<br/>
+                     <code>ssh -T git@github.com</code>
+                  </li>
+                  <li>
+                     Initialize git locally. Create a readme file and push to github to validate everything is working. Open your terminal and run the follwing commands:
+                     <code>
+                        echo “# demoProject name” >> README.md<br/>
+                        git init<br/>
+                        git add README.md<br/>
+                        git commit -m “first commit”<br/>
+                        git branch -M main<br/>
+                        git remote add origin git@github.com:{Your github username}/{Your repository name}.git<br/>
+                        git push -u origin main
+                     </code>
+                  </li>
+                  <li>
+                     Finally, return to github.com and view your repository. Your new readme file and commit comment should be visible.
                   </li>
                </ol>
             </div>
