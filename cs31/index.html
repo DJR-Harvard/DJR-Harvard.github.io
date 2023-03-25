@@ -119,6 +119,7 @@
             <div class="col-md-6">
                <h2>AWS EC2 Environment Setup</h2>
                <img src="AWSSecurityGroup.jpg" alt="Placeholder Image" class="img-fluid mb-3" width="250px">
+               <img src="AWSOpenRule.jpg" alt="Placeholder Image" class="img-fluid mb-3" width="250px">
                <video src="placeholder.mp4" controls class="mb-3"></video>
                <p class="lead">Summary: In this section, we will set up our AWS EC2 environment for web development.</p>
                <ol>
@@ -130,7 +131,9 @@
                      Accept all other default values and then click "Launch Instance". We won't be using the key pair or get into the various EC2 settings for this tutorial.
                   </li>
                   <li>
-                     In a production setting we would set up billing notifications and configure our security group such that we can manage costs and prevent unauthorized access to our EC2 instance. This is out of scope for this tutorial, so we will modify the default security group to accept inbound connections from anywhere for demonstration purposes.
+                     In a production setting we would set up billing notifications and configure our security group such that we can manage costs and prevent unauthorized access to our EC2 instance. This is out of scope for this tutorial, so we will modify the default security group to accept inbound connections from anywhere for demonstration purposes.<br/>
+                     Drill into the new EC2 instance. From the "Security" tab, locate the section titled "Inbound Rules". Click the link shown under the "Security Groups" column as shown in the screenshot.<br/>
+                     Click "Edit Inbound Rules". Change the existing rule type to say "All traffic". Change the source to say "Anywhere IPv4". Again, in a production environment, we would make this more restrictive. See screenshot for what the open inbound rule should look like.
                      
                   </li>
                   <li>Connect to the EC2 instance via SSH.</li>
