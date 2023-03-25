@@ -149,9 +149,9 @@
                      
                   </li>
                   <li>Connect to the EC2 instance. Drill into the EC2 instance and click "Connect" as shown in the screenshot. This will open up a terminal within your EC2 instance where we will repeat the steps of installing git and nodejs.</li>
-                  <li>Create a project folder and then change into it.<br/>
+                  <!--li>Create a project folder and then change into it.<br/>
                      <code>mkdir nodeProject<br/>cd nodeProject</code>
-                  </li>
+                  </li-->
                   <li>Install nodejs. As there is no web browser on this instance, we will install nodejs from the command line. Enter the following command:<br/>
                      <code>sudo yum install nodejs</code>
                   </li>
@@ -177,6 +177,25 @@
                   <li>
                      Validate your connection with the following command.<br/>
                      <code>ssh -T git@github.com</code>
+                  </li>
+                  <li>
+                     Return to your repository on github.com. Click the green "Code" button. Copy the code under SSH as shown in the screenshot.<br/>
+                     It should be in the format of git@github.com:{github username}/{github repository name}.git
+                  </li>
+                  <li>
+                     From your EC2 terminal enter the following command, using the SSH code from the prior step.<br/>
+                     <code>
+                        git clone git@github.com:{github username}/{github repository name}.git
+                     </code>
+                  </li>
+                  <li>
+                     Validate that the repository has been saved on your EC2 instance.<br/>
+                     <code>
+                        ls -al<br/>
+                        cd demoProject<br/>
+                        ls -al<br/>
+                     </code><br/>
+                     You should see a copy of the readme file you made on your local computer.
                   </li>
                </ol>
             </div>
