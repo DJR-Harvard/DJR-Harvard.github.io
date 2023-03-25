@@ -43,7 +43,10 @@
    </head>
    <body>
       <div class="container my-5">
-         <h1 class="text-center mb-5">My Github and AWS EC2 Tutorial b</h1>
+         <h1 class="text-center mb-5">
+            David Rasmussen CS31 Graduate Project<br/>
+            Github and AWS EC2 Tutorial
+         </h1>
          <div class="row">
             <div class="col-md-6">
                <h2>Getting Started with Github</h2>
@@ -257,16 +260,28 @@
          <div class="row">
             <div class="col-md-6 offset-md-3">
                <h2>Go Live on EC2</h2>
-               <img src="placeholder.jpg" alt="Placeholder Image" class="img-fluid mb-3">
-               <video src="placeholder.mp4" controls class="mb-3"></video>
                <p class="lead">Summary: In this section, we will deploy our project to the AWS EC2 instance.</p>
                <ol>
-                  <li>Connect to the EC2 instance via SSH.</li>
-                  <li>Clone your Github repository.</li>
-                  <li>Copy your project files to the EC2 instance.</li>
-                  <li>Install any necessary dependencies on the EC2 instance.</li>
-                  <li>Start your Node.js server on the EC2 instance.</li>
+                  <li>Return to your EC2 terminal. Reconnect if necessary.</li>
+                  <li>Navigate to the directory where you previously did the "git clone" command.</li>
+                  <li>Pull in the latest changes to your repository with the following command:<br/>
+                     <code>git pull</code><br/>
+                     Git will display the names of the files changed.
+                  </li>
+                  <li>Use node to run the js file we just pulled in. In this case, the command is:<br/>
+                     <code>node server</code>
+                  </li>
+                  <li>Find your public IP address to test the server is running. Within the AWS console, navigate to your EC2 instance.
+                   Find the Public IPv4 address as shown in the screenshot. Record this IP address, but don't copy and paste it directly into your browser.
+                  </li>
+                  <li>
+                     Navigate to the URL http://{your ip address}:3000<br/>
+                     Note we are using "http" and not "https". Also note the port number afterward. Our example server should be showing our Hello World message.
+                  </li>
                </ol>
+            </div>
+            <div class="col-md-6 offset-md-3">
+               <img src="EC2ipAddress.jpg" alt="Placeholder Image" class="img-fluid mb-3">
             </div>
          </div>
          <div class="row">
