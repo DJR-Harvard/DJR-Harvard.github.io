@@ -214,7 +214,22 @@
                </h2>
                <p class="lead">Summary: In this section, we will create a new project on our local machine.</p>
                <ol>
-                  <li>Create a new directory for your project.</li>
+                  <li>Within the project folder you created on your local machine, open a text editor and create the file server.js. Use the following sample code.<br/>
+                     <code>
+                        const http = require('http');<br/>
+                        const hostname = '0.0.0.0';<br/>
+                        const port = 3000;<br/>
+                        const server = http.createServer((req, res) => {<br/>
+                        &emsp;res.statusCode = 200;<br/>
+                        &emsp;res.setHeader('Content-Type', 'text/plain');<br/>
+                        &emsp;res.end('Hello, World! I've learned how to set up a dev environment using github and EC2!\n');<br/>
+                        });<br/>
+
+                        server.listen(port, hostname, () => {<br/>
+                        &emsp;console.log(`Server running at http://${hostname}:${port}/`);<br/>
+                        });<br/>
+                     </code>
+                  </li>
                   <li>Initialize your project with Node.js.</li>
                   <li>Initialize your project with Git.</li>
                   <li>Create your project files.</li>
