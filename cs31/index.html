@@ -148,9 +148,36 @@
                      Click "Edit Inbound Rules". Change the existing rule type to say "All traffic". Change the source to say "Anywhere IPv4". Again, in a production environment, we would make this more restrictive. See screenshot for what the open inbound rule should look like.
                      
                   </li>
-                  <li>Connect to the EC2 instance via SSH.</li>
-                  <li>Install Node.js and Git on the EC2 instance.</li>
-                  <li>Set up your SSH key on the EC2 instance.</li>
+                  <li>Connect to the EC2 instance. Drill into the EC2 instance and click "Connect" as shown in the screenshot. This will open up a terminal within your EC2 instance where we will repeat the steps of installing git and nodejs.</li>
+                  <li>Create a project folder and then change into it.<br/>
+                     <code>mkdir nodeProject<br/>cd nodeProject</code>
+                  </li>
+                  <li>Install nodejs. As there is no web browser on this instance, we will install nodejs from the command line. Enter the following command:<br/>
+                     <code>sudo yum install nodejs</code>
+                  </li>
+                  <li>Install git. Use the following command.<br/>
+                     <code>sudo yum install git</code>
+                  </li>
+                  <li>
+                     Configure git the same way you did locally.<br/>
+                     <code>
+                        git config --global user.name "Your Name"<br/>
+                        git config --global user.email "your_email@example.com"
+                     </code>
+                  </li>
+                  <li>
+                     Create SSH keys, the same way you did locally. Alternatively you can use your existing key which involves using scp to copy your private key to your EC2 instance.
+                     That is out of scope for this tutorial, so we will just create another key pair.<br/>
+                     <code>
+                        ssh-keygen -t rsa -b 4096 -C "your_email@example.com"<br/>
+                        cat ~/.ssh/id_rsa.pub
+                     </code><br/>
+                     Your public key is now displayed in your terminal. Return to github.com and add your new SSH key the same way as before.
+                  </li>
+                  <li>
+                     Validate your connection with the following command.<br/>
+                     <code>ssh -T git@github.com</code>
+                  </li>
                </ol>
             </div>
             <div class="col-md-6">
